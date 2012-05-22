@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title ref="jr:itext('map_the_poison')">Map The Poison</h:title>
+    <model>
+      <instance id="map_the_poison">
+        <map_the_poison name="Map The Poison" id="new_form1">
+          <site_location/>
+          <site_id/>
+          <site_photo/>
+          <sample_id/>
+          <total_suspended_solids_mg_slash_l/>
+          <max_bod5_20_deg_c/>
+          <cod_mg_slash_l/>
+          <total_phosphorus_mg_slash_l/>
+          <ammonium_nitrogen_mg_slash_l/>
+          <total_nitrogen_mg_slash_l/>
+          <faecal_coliforms_nos_slash_100ml/>
+          <comments/>
+        </map_the_poison>
+      </instance>
+      <bind id="site_location" nodeset="/map_the_poison/site_location" format="gps" type="geopoint"/>
+      <bind id="site_id" nodeset="/map_the_poison/site_id" type="xsd:string"/>
+      <bind id="site_photo" nodeset="/map_the_poison/site_photo" format="image" type="binary"/>
+      <bind id="sample_id" nodeset="/map_the_poison/sample_id" type="barcode"/>
+      <bind id="total_suspended_solids_mg_slash_l" nodeset="/map_the_poison/total_suspended_solids_mg_slash_l" type="xsd:decimal"/>
+      <bind id="max_bod5_20_deg_c" nodeset="/map_the_poison/max_bod5_20_deg_c" type="xsd:decimal"/>
+      <bind id="cod_mg_slash_l" nodeset="/map_the_poison/cod_mg_slash_l" type="xsd:decimal"/>
+      <bind id="total_phosphorus_mg_slash_l" nodeset="/map_the_poison/total_phosphorus_mg_slash_l" type="xsd:decimal"/>
+      <bind id="ammonium_nitrogen_mg_slash_l" nodeset="/map_the_poison/ammonium_nitrogen_mg_slash_l" type="xsd:decimal"/>
+      <bind id="total_nitrogen_mg_slash_l" nodeset="/map_the_poison/total_nitrogen_mg_slash_l" type="xsd:decimal"/>
+      <bind id="faecal_coliforms_nos_slash_100ml" nodeset="/map_the_poison/faecal_coliforms_nos_slash_100ml" type="xsd:decimal"/>
+      <bind id="comments" nodeset="/map_the_poison/comments" type="xsd:string"/>
+      <itext>
+        <translation lang="en" lang-name="English">
+          <text id="map_the_poison">
+            <value>Map The Poison</value>
+          </text>
+          <text id="site_details">
+            <value>Site Details</value>
+          </text>
+          <text id="site_location">
+            <value>Site Location</value>
+          </text>
+          <text id="site_id">
+            <value>Site ID</value>
+          </text>
+          <text id="site_photo">
+            <value>Site Photo</value>
+          </text>
+          <text id="sample_id">
+            <value>Sample ID</value>
+          </text>
+          <text id="total_suspended_solids_mg_slash_l">
+            <value>Total suspended solids, (mg/l)</value>
+          </text>
+          <text id="max_bod5_20_deg_c">
+            <value>Max BOD5  @ 20 deg C</value>
+          </text>
+          <text id="cod_mg_slash_l">
+            <value>COD, (mg/l)</value>
+          </text>
+          <text id="total_phosphorus_mg_slash_l">
+            <value>Total phosphorus, (mg/l)</value>
+          </text>
+          <text id="ammonium_nitrogen_mg_slash_l">
+            <value>Ammonium nitrogen, (mg/l)</value>
+          </text>
+          <text id="total_nitrogen_mg_slash_l">
+            <value>Total nitrogen (mg/l)</value>
+          </text>
+          <text id="faecal_coliforms_nos_slash_100ml">
+            <value>Faecal Coliforms (nos/ 100ml)</value>
+          </text>
+          <text id="comments">
+            <value>Comments</value>
+          </text>
+        </translation>
+        <translation lang="fr" lang-name="French">
+          <text id="map_the_poison">
+            <value>Map The Poison</value>
+          </text>
+          <text id="site_details">
+            <value>Site Details</value>
+          </text>
+          <text id="site_location">
+            <value>Site Location</value>
+          </text>
+          <text id="site_id">
+            <value>Site ID</value>
+          </text>
+          <text id="site_photo">
+            <value>Site Photo</value>
+          </text>
+          <text id="sample_id">
+            <value>Sample ID</value>
+          </text>
+          <text id="total_suspended_solids_mg_slash_l">
+            <value>Total suspended solids, (mg/l)</value>
+          </text>
+          <text id="max_bod5_20_deg_c">
+            <value>Max BOD5  @ 20 deg C</value>
+          </text>
+          <text id="cod_mg_slash_l">
+            <value>COD, (mg/l)</value>
+          </text>
+          <text id="total_phosphorus_mg_slash_l">
+            <value>Total phosphorus, (mg/l)</value>
+          </text>
+          <text id="ammonium_nitrogen_mg_slash_l">
+            <value>Ammonium nitrogen, (mg/l)</value>
+          </text>
+          <text id="total_nitrogen_mg_slash_l">
+            <value>Total nitrogen (mg/l)</value>
+          </text>
+          <text id="faecal_coliforms_nos_slash_100ml">
+            <value>Faecal Coliforms (nos/ 100ml)</value>
+          </text>
+          <text id="comments">
+            <value>Comments</value>
+          </text>
+        </translation>
+      </itext>
+    </model>
+  </h:head>
+  <h:body>
+    <group id="1">
+      <label ref="jr:itext('site_details')"/>
+      <input bind="site_location">
+        <label ref="jr:itext('site_location')"/>
+      </input>
+      <input bind="site_id">
+        <label ref="jr:itext('site_id')"/>
+      </input>
+      <upload bind="site_photo" mediatype="image/*">
+        <label ref="jr:itext('site_photo')"/>
+      </upload>
+      <input bind="sample_id">
+        <label ref="jr:itext('sample_id')"/>
+      </input>
+      <input bind="total_suspended_solids_mg_slash_l">
+        <label ref="jr:itext('total_suspended_solids_mg_slash_l')"/>
+      </input>
+      <input bind="max_bod5_20_deg_c">
+        <label ref="jr:itext('max_bod5_20_deg_c')"/>
+      </input>
+      <input bind="cod_mg_slash_l">
+        <label ref="jr:itext('cod_mg_slash_l')"/>
+      </input>
+      <input bind="total_phosphorus_mg_slash_l">
+        <label ref="jr:itext('total_phosphorus_mg_slash_l')"/>
+      </input>
+      <input bind="ammonium_nitrogen_mg_slash_l">
+        <label ref="jr:itext('ammonium_nitrogen_mg_slash_l')"/>
+      </input>
+      <input bind="total_nitrogen_mg_slash_l">
+        <label ref="jr:itext('total_nitrogen_mg_slash_l')"/>
+      </input>
+      <input bind="faecal_coliforms_nos_slash_100ml">
+        <label ref="jr:itext('faecal_coliforms_nos_slash_100ml')"/>
+      </input>
+      <input bind="comments">
+        <label ref="jr:itext('comments')"/>
+      </input>
+    </group>
+  </h:body>
+</h:html>
+
