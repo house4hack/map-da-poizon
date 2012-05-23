@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title ref="jr:itext('map_the_poison')">New Form1</h:title>
+    <model>
+      <instance id="map_the_poison">
+        <map_the_poison name="Map The Poison" id="new_form1">
+          <site_location/>
+          <site_id/>
+          <site_photo/>
+          <sample>
+            <sample_id/>
+            <measurement>
+              <measurement_parameter/>
+              <measured_value/>
+            </measurement>
+          </sample>
+          <comments/>
+        </map_the_poison>
+      </instance>
+      <bind id="site_location" nodeset="/map_the_poison/site_location" type="geopoint" format="gps"/>
+      <bind id="site_id" nodeset="/map_the_poison/site_id" type="xsd:string"/>
+      <bind id="site_photo" nodeset="/map_the_poison/site_photo" format="image" type="binary"/>
+      <bind id="sample" nodeset="/map_the_poison/sample"/>
+      <bind id="sample_id" nodeset="/map_the_poison/sample/sample_id" type="barcode"/>
+      <bind id="comments" nodeset="/map_the_poison/comments" type="xsd:string"/>
+      <bind id="measurement" nodeset="/map_the_poison/sample/measurement"/>
+      <bind id="measurement_parameter" nodeset="/map_the_poison/measurement/measurement_parameter" type="xsd:string"/>
+      <bind id="measured_value" nodeset="/map_the_poison/measurement/measured_value" type="xsd:decimal" required="true()"/>
+      <itext>
+        <translation lang="en" lang-name="English">
+          <text id="map_the_poison">
+            <value>Map The Poison</value>
+          </text>
+          <text id="site_details">
+            <value>Site Details</value>
+          </text>
+          <text id="site_location">
+            <value>Site location</value>
+          </text>
+          <text id="please_turn_gps_on_and_click_button_below.">
+            <value>Please turn GPS on and click button below.</value>
+          </text>
+          <text id="site_id">
+            <value>Site ID</value>
+          </text>
+          <text id="enter_a_site_identifier">
+            <value>Enter a site identifier</value>
+          </text>
+          <text id="site_photo">
+            <value>Site photo</value>
+          </text>
+          <text id="take_a_photo_of_where_the_samples_are_taken_from">
+            <value>Take a photo of where the samples are taken from</value>
+          </text>
+          <text id="sample">
+            <value>Sample</value>
+          </text>
+          <text id="water_sample_being_analysed">
+            <value>Water sample being analysed</value>
+          </text>
+          <text id="sample_id">
+            <value>Sample ID</value>
+          </text>
+          <text id="scan_the_barcode_from_the_sample_test_tube">
+            <value>Scan the barcode from the sample test tube</value>
+          </text>
+          <text id="measurement">
+            <value>Measurement</value>
+          </text>
+          <text id="measurement_of_an_element_in_sample">
+            <value>Measurement of an element in sample</value>
+          </text>
+          <text id="measurement_parameter">
+            <value>Measurement Parameter</value>
+          </text>
+          <text id="the_parameter_being_measured">
+            <value>The parameter being measured</value>
+          </text>
+          <text id="total_suspended_solids_mg_slash_l">
+            <value>Total suspended solids, (mg/l)</value>
+          </text>
+          <text id="max_bod5_20_deg_c">
+            <value>Max BOD5  @ 20 deg C</value>
+          </text>
+          <text id="cod_mg_slash_l">
+            <value>COD, (mg/l)</value>
+          </text>
+          <text id="total_phosphorus_mg_slash_l">
+            <value>Total phosphorus, (mg/l)</value>
+          </text>
+          <text id="ammonium_nitrogen_mg_slash_l">
+            <value>Ammonium nitrogen, (mg/l)</value>
+          </text>
+          <text id="total_nitrogen_mg_slash_l">
+            <value>Total nitrogen (mg/l)</value>
+          </text>
+          <text id="faecal_coliforms_nos_slash_100ml">
+            <value>Faecal Coliforms (nos/ 100ml)</value>
+          </text>
+          <text id="measured_value">
+            <value>Measured value</value>
+          </text>
+          <text id="the_value_of_the_measured_parameter">
+            <value>The value of the measured parameter</value>
+          </text>
+          <text id="comments">
+            <value>Comments</value>
+          </text>
+          <text id="add_any_comments_if_you_need_to">
+            <value>Add any comments if you need to</value>
+          </text>
+        </translation>
+        <translation lang="fr" lang-name="French">
+          <text id="site_details">
+            <value>undefined</value>
+          </text>
+          <text id="map_the_poison">
+            <value>New Form1</value>
+          </text>
+        </translation>
+      </itext>
+    </model>
+  </h:head>
+  <h:body>
+    <group id="1">
+      <label ref="jr:itext('site_details')"/>
+      <input bind="site_location">
+        <label ref="jr:itext('site_location')"/>
+        <hint ref="jr:itext('please_turn_gps_on_and_click_button_below.')"/>
+      </input>
+      <input bind="site_id">
+        <label ref="jr:itext('site_id')"/>
+        <hint ref="jr:itext('enter_a_site_identifier')"/>
+      </input>
+      <upload bind="site_photo" mediatype="image/*">
+        <label ref="jr:itext('site_photo')"/>
+        <hint ref="jr:itext('take_a_photo_of_where_the_samples_are_taken_from')"/>
+      </upload>
+      <group id="sample">
+        <label ref="jr:itext('sample')"/>
+        <hint ref="jr:itext('water_sample_being_analysed')"/>
+        <repeat bind="sample">
+          <input bind="sample_id">
+            <label ref="jr:itext('sample_id')"/>
+            <hint ref="jr:itext('scan_the_barcode_from_the_sample_test_tube')"/>
+          </input>
+          <group id="measurement">
+            <label ref="jr:itext('measurement')"/>
+            <hint ref="jr:itext('measurement_of_an_element_in_sample')"/>
+            <repeat bind="measurement">
+              <select1 ref="measurement_parameter">
+                <label ref="jr:itext('measurement_parameter')"/>
+                <hint ref="jr:itext('the_parameter_being_measured')"/>
+                <item id="total_suspended_solids_mg_slash_l">
+                  <label ref="jr:itext('total_suspended_solids_mg_slash_l')"/>
+                  <value>total_suspended_solids_mg_slash_l</value>
+                </item>
+                <item id="max_bod5_20_deg_c">
+                  <label ref="jr:itext('max_bod5_20_deg_c')"/>
+                  <value>max_bod5_20_deg_c</value>
+                </item>
+                <item id="cod_mg_slash_l">
+                  <label ref="jr:itext('cod_mg_slash_l')"/>
+                  <value>cod_mg_slash_l</value>
+                </item>
+                <item id="total_phosphorus_mg_slash_l">
+                  <label ref="jr:itext('total_phosphorus_mg_slash_l')"/>
+                  <value>total_phosphorus_mg_slash_l</value>
+                </item>
+                <item id="ammonium_nitrogen_mg_slash_l">
+                  <label ref="jr:itext('ammonium_nitrogen_mg_slash_l')"/>
+                  <value>ammonium_nitrogen_mg_slash_l</value>
+                </item>
+                <item id="total_nitrogen_mg_slash_l">
+                  <label ref="jr:itext('total_nitrogen_mg_slash_l')"/>
+                  <value>total_nitrogen_mg_slash_l</value>
+                </item>
+                <item id="faecal_coliforms_nos_slash_100ml">
+                  <label ref="jr:itext('faecal_coliforms_nos_slash_100ml')"/>
+                  <value>faecal_coliforms_nos_slash_100ml</value>
+                </item>
+              </select1>
+              <input ref="measured_value">
+                <label ref="jr:itext('measured_value')"/>
+                <hint ref="jr:itext('the_value_of_the_measured_parameter')"/>
+              </input>
+            </repeat>
+          </group>
+        </repeat>
+      </group>
+      <input bind="comments">
+        <label ref="jr:itext('comments')"/>
+        <hint ref="jr:itext('add_any_comments_if_you_need_to')"/>
+      </input>
+    </group>
+  </h:body>
+</h:html>
+
